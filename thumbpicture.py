@@ -33,10 +33,10 @@ def resultScreen():
         for key in transapi['collection']['items']:
                 if 'href' in key['links'][0]:
                         print(key['data'][0]['title'])
-                        print()  
                         webbrowser.open(key['links'][0]['href'])
+                        print(key['data'][0]['description'])
         return;
-#resultScreen()
+resultScreen()
 pictureLink = transapi['collection']['items'][0]['href']
 pictureList = readAPI(pictureLink)
 smallPicture = pictureList[3]
